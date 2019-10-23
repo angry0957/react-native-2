@@ -24,9 +24,23 @@ const AuthStackNavigation = createStackNavigator({
   },
   LoginStack: { screen: LoginScreen,
     headerMode: 'none',
-    navigationOptions: {
-      header: null,
-    },  
+    navigationOptions: ({ navigate, navigation }) => ({
+      title: 'Easy Rent Sale',
+      headerLeft: (
+        <TouchableWithoutFeedback
+          onPress={() => navigation.openDrawer()}
+        >
+            <Image resizeMode={'contain'} style={{marginLeft: 10}} source={require('./assets/left-arrow.png')}/>
+          </TouchableWithoutFeedback>
+      ),  
+      headerRight: (
+        <TouchableWithoutFeedback
+          onPress={() => navigation.openDrawer()}
+        >
+            <Image resizeMode={'contain'} style={{marginRight: 10}} source={require('./assets/more-vertical.png')}/>
+          </TouchableWithoutFeedback>),
+      headerTitleStyle: {textAlign: 'center', flex: 1, color: 'white'},
+    }),    
   },
   SellerLoginStack: { screen: SellerLoginScreen,
     headerMode: 'none',
