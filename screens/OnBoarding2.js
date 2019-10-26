@@ -29,19 +29,14 @@ import { TextField } from 'react-native-materialui-textfield';
 import {connect} from 'react-redux'
 import { firstLaunchCheck, INC, DEC } from "../actions/index";
 import { withNavigation } from 'react-navigation';
-import {AsyncStorage} from 'react-native';
-
-import {
-  DotIndicator,
-} from 'react-native-indicators';
 
 
-class SellerLoginScreen extends Component {
+class OnBoardingScreen2 extends Component {
 
   constructor(props) {
     super(props);
     this.login = this.login.bind(this)
-    this.associate = this.associate.bind(this)
+    this.seller = this.seller.bind(this)
   }
 
   login(){
@@ -49,7 +44,7 @@ class SellerLoginScreen extends Component {
     navigate('LoginStack2')
   }
 
-  associate(){
+  seller(){
     const {navigate} = this.props.navigation;
     navigate('OnBoardingStack')
   }
@@ -72,8 +67,8 @@ class SellerLoginScreen extends Component {
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableWithoutFeedback onPress={this.associate}>
-            <Text style={{margin: 10, fontWeight: 'bold', fontSize: 15, textAlign: 'center'}}>Become an Associate</Text>
+          <TouchableWithoutFeedback onPress={this.seller}>
+            <Text style={{margin: 10, fontWeight: 'bold', fontSize: 15, textAlign: 'center'}}>Become a Associate</Text>
           </TouchableWithoutFeedback>
         </View>
 
@@ -124,4 +119,5 @@ const mapDispatchToEvents = (dispatch) => {
     firstLaunchCheck
   };
 };
-export default connect(mapStateToProps, mapDispatchToEvents)(withNavigation(SellerLoginScreen))
+export default connect(mapStateToProps, mapDispatchToEvents)(withNavigation(OnBoardingScreen2))
+
