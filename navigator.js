@@ -2,7 +2,9 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView, Image, TouchableWithoutFeedback } from "react-native";
 import LoginScreen from "./screens/login";
 import ProductScreen from "./screens/product";
+import OrderScreen from "./screens/order";
 import LoginScreen2 from "./screens/login2";
+import GraphScreen from "./screens/graph";
 import SellerLoginScreen from "./screens/SellerLogin";
 import OnBoardingScreen from "./screens/OnBoarding";
 import OnBoardingScreen2 from "./screens/OnBoarding2";
@@ -25,21 +27,36 @@ export const Navigator = createDrawerNavigator(
   {
   Home_ : createStackNavigator(
     {
-    Home: { screen: ProductScreen,
-      navigationOptions: ({ navigate, navigation }) => ({
-        title: 'Products',
-        headerLeft: (
-          <TouchableWithoutFeedback
-            onPress={() => navigation.openDrawer()}
-          >
-              <Image resizeMode={'contain'} style={{marginLeft: 10}} source={require('./assets/Menu.png')}/>
-            </TouchableWithoutFeedback>
-        ),  
-        headerRight: (
-          <Text></Text>),
-        headerTitleStyle: {textAlign: 'center', flex: 1, color: 'black'},
-      }),  
-    },
+      Home: { screen: ProductScreen,
+        navigationOptions: ({ navigate, navigation }) => ({
+          title: 'Products',
+          headerLeft: (
+            <TouchableWithoutFeedback
+              onPress={() => navigation.openDrawer()}
+            >
+                <Image resizeMode={'contain'} style={{marginLeft: 10}} source={require('./assets/Menu.png')}/>
+              </TouchableWithoutFeedback>
+          ),  
+          headerRight: (
+            <Text></Text>),
+          headerTitleStyle: {textAlign: 'center', flex: 1, color: 'black'},
+        }),  
+      },
+      OrderStack : { screen: OrderScreen,
+        navigationOptions: ({ navigate, navigation }) => ({
+          title: 'Orders',
+          headerLeft: (
+            <TouchableWithoutFeedback
+              onPress={() => navigation.openDrawer()}
+            >
+                <Image resizeMode={'contain'} style={{marginLeft: 10}} source={require('./assets/Menu.png')}/>
+              </TouchableWithoutFeedback>
+          ),  
+          headerRight: (
+            <Text></Text>),
+          headerTitleStyle: {textAlign: 'center', flex: 1, color: 'black'},
+        }),  
+      },
     },
     {
       initialRouteName: 'Home',
@@ -55,12 +72,10 @@ export const Navigator = createDrawerNavigator(
                             style={{height: 20, width: 20}}
                           />
       }),
-
   }
-      
   ),
+  GraphStack : { screen: GraphScreen},
 },
-
 {  
   headerLayoutPreset: 'center', // default is 'left'
   drawerBackgroundColor: "white",

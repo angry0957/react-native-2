@@ -26,7 +26,7 @@ import { firstLaunchCheck, INC, DEC } from "../actions/index";
 import { withNavigation } from 'react-navigation';
 
 
-class ProductScreen extends Component {
+class OrderScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,9 +37,9 @@ class ProductScreen extends Component {
         this.move = this.move.bind(this)
     }
 
-    move() {
+    move(){
         const {navigate} = this.props.navigation;
-        navigate('OrderStack')
+        navigate('GraphStack')
     }
 
     render()
@@ -74,11 +74,10 @@ class ProductScreen extends Component {
                         numColumns={2}
                         renderItem={({item}) => 
                         <View key={item.id} style={{flex: 1/2, }}>
-                            <TouchableWithoutFeedback
-                                onPress={this.move}
-                            >
+                            <TouchableWithoutFeedback onPress={this.move}>
                                 <View style={{height: 150, margin: 3, padding: 3, backgroundColor: '#f6f6ff'}}>
-                                    <View style={{margin: 10, alignSelf: 'flex-end', backgroundColor: 'green', height:15, width: 15, borderRadius: 15/2}}>
+                                    <View style={{margin: 10, alignSelf: 'flex-end'}}>
+                                        <Text style={{fontWeight: 'bold'}}>Size</Text>
                                     </View>
                                 </View>
                             </TouchableWithoutFeedback>
@@ -120,5 +119,5 @@ const styles = StyleSheet.create({
       firstLaunchCheck
     };
   };
-  export default connect(mapStateToProps, mapDispatchToEvents)(withNavigation(ProductScreen))
+  export default connect(mapStateToProps, mapDispatchToEvents)(withNavigation(OrderScreen))
   
