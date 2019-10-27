@@ -1,8 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView, Image, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Image, TouchableWithoutFeedback, TouchableOpacity } from "react-native";
 import LoginScreen from "./screens/login";
 import SellerLoginScreen from "./screens/SellerLogin";
 import OnBoardingScreen from "./screens/OnBoarding";
+import PhoneAffiliateHomeScreen from "./screens/PhoneAffiliateHomeScreen";
+import PhoneAffiliateCodeScreen from "./screens/PhoneAffiliateCodeScreen"
 
 
 import {
@@ -21,6 +23,49 @@ const AuthStackNavigation = createStackNavigator({
     navigationOptions: {
       header: null,
     },  
+  },
+  PhoneAffiliateHomeScreenStack: {
+    screen: PhoneAffiliateHomeScreen,
+    headerMode: 'none',
+    navigationOptions:({navigate, navigation}) => ({
+      title: 'Home',
+      headerStyle: {
+        backgroundColor: '#F8F6F8',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        color: 'black',
+        marginLeft: '35%',
+      },
+      headerLeft: (
+        <TouchableWithoutFeedback onPress={() => navigation.openDrawer()}>
+          <Image resizeMode={'contain'} style={{marginLeft: 10}} source={require('./assets/drawer.png')}/>
+        </TouchableWithoutFeedback>
+      ),
+    }),
+  },
+  PhoneAffiliateCodeScreenStack: {
+    screen: PhoneAffiliateCodeScreen,
+    headerMode: 'none',
+    navigationOptions:({navigate, navigation}) => ({
+      title: 'Code',
+      headerStyle: {
+        backgroundColor: '#F8F6F8',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        color: 'black',
+        marginLeft: '35%',
+
+      },
+      headerLeft: (
+        <TouchableWithoutFeedback onPress={() => navigation.openDrawer()}>
+          <Image resizeMode={'contain'} style={{marginLeft: 10}} source={require('./assets/drawer.png')}/>
+        </TouchableWithoutFeedback>
+      ),
+    }),
   },
   LoginStack: { screen: LoginScreen,
     headerMode: 'none',
