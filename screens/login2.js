@@ -25,12 +25,11 @@ import { firstLaunchCheck, INC, DEC } from "../actions/index";
 import { withNavigation } from 'react-navigation';
 
 
-class LoginScreen extends Component {
+class LoginScreen2 extends Component {
 
   constructor(props) {
     super(props);
     this.change = this.change.bind(this);
-    this.login = this.login.bind(this);
     
     this.state = {
       email   : '',
@@ -41,8 +40,6 @@ class LoginScreen extends Component {
   }
 
   login(){
-    const {navigate} = this.props.navigation;
-    navigate('Home')
 
   }
 
@@ -83,7 +80,7 @@ class LoginScreen extends Component {
           <View style={{flex: 1}}>
             <View style={{flex: 1, marginBottom: 10, justifyContent: 'flex-end'}}>
               <Text style={{color: 'grey', fontSize: 12, textAlign: 'center'}}>Don't  have an account ?</Text>
-              <Text style={{fontSize: 15, textAlign: 'center'}}>Become a seller</Text>
+              <Text style={{fontSize: 15, textAlign: 'center'}}>Become a associate</Text>
             </View>
           </View>
         </View>
@@ -115,4 +112,4 @@ const mapDispatchToEvents = (dispatch) => {
     firstLaunchCheck
   };
 };
-export default connect(mapStateToProps, mapDispatchToEvents)(withNavigation(LoginScreen))
+export default connect(mapStateToProps, mapDispatchToEvents)(withNavigation(LoginScreen2))
