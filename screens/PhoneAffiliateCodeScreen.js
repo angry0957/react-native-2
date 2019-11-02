@@ -34,7 +34,7 @@ class PhoneAffiliateCodeScreen extends Component{
                     </View>
                     <View style={styles.instructionDescContainer}>
                         <Text style={styles.roundText}>3</Text>
-                        <Text style={styles.instructionDescText}>Sit back and watch the money come in,  
+                        <Text style={styles.instructionDescText}>Sit back and watch the money come in, 
                         <Text style={{color: 'blue', textDecorationLine: 'underline'}}> here</Text>
                         </Text>
                     </View>
