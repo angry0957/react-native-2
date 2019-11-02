@@ -1,7 +1,7 @@
 {
   "expo": {
     "sdkVersion": "33.0.0",
-    "icon": "./assets/splash.png",
+    "icon": "./assets/nblogo.png",
     "slug": "nativebasekitchensink",
     "loading": {
       "hideExponentText": true,
