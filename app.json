@@ -19,7 +19,14 @@
       "barStyle": "light-content",
       "backgroundColor": "#334393"
     },
-    "name": "NativebaseKitchenSink",
+   "ios": {
+      "bundleIdentifier": "com.react2.react2",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.react2.react2"
+    },
+    "name": "react2",
     "version": "2.5.0",
     "platforms": [
       "android",
