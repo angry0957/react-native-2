@@ -13,6 +13,9 @@ import ForgotPasswordScreen from './e_commerce/ForgotPasswordScreen'
 import ThankYouScreen from './e_commerce/ThankYouScreen'
 import PlazmaScreen2 from './e_commerce/PlazmaScreen2'
 import ReferralProgramScreen from './e_commerce/ReferralProgramScreen'
+import OrderScreen from './e_commerce/OrderScreen'
+import SettingScreen from './e_commerce/SettingsScreen'
+import GeneralScreen from './e_commerce/GeneralScreen'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
@@ -158,6 +161,26 @@ const AuthStackNavigation = createStackNavigator({
       headerTitleStyle: {textAlign: 'center', flex: 1, color: 'white'},
     }),    
   },
+  SettingScreenStack: { screen: SettingScreen,
+    headerMode: 'none',
+    navigationOptions: ({ navigate, navigation }) => ({
+      title: '',
+      headerLeft: (
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate('OnBoardingStack')}
+        >
+            <Image resizeMode={'contain'} style={{marginLeft: 10}} source={require('./assets/left-arrow.png')}/>
+          </TouchableWithoutFeedback>
+      ),  
+      headerRight: (
+        <TouchableWithoutFeedback
+          onPress={() => navigation.openDrawer()}
+        >
+            <Image resizeMode={'contain'} style={{marginRight: 10}} source={require('./assets/more-vertical.png')}/>
+          </TouchableWithoutFeedback>),
+      headerTitleStyle: {textAlign: 'center', flex: 1, color: 'white'},
+    }),    
+  },
   PlazmaScreen2Stack: { screen: PlazmaScreen2,
     headerMode: 'none',
     navigationOptions: ({ navigate, navigation }) => ({
@@ -173,7 +196,36 @@ const AuthStackNavigation = createStackNavigator({
       headerStyle: {backgroundColor: 'black'},
     }),    
   },
+  GeneralScreenStack: { screen: GeneralScreen,
+    headerMode: 'none',
+    navigationOptions: ({ navigate, navigation }) => ({
+      title: '',
+      headerLeft: (
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate('OnBoardingStack')}
+        >
+            <Icon name='chevron-left' size={30}  style= {{color:'black', marginLeft: 2}}/>
+          </TouchableWithoutFeedback>
+      ),
+      headerStyle: {backgroundColor: 'White'},
+    }),    
+  },
   ReferralProgramScreenStack: { screen: ReferralProgramScreen,
+    headerMode: 'none',
+    navigationOptions: ({ navigate, navigation }) => ({
+      title: '',
+      headerLeft: (
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate('OnBoardingStack')}
+        >
+            <Icon name='chevron-left' size={25}  style= {{marginLeft: 2}}/>
+          </TouchableWithoutFeedback>
+      ),
+      headerTitleStyle: {backgroundColor: 'white'},
+      headerStyle: {backgroundColor: 'white'}
+    }),    
+  },
+  OrderScreenStack: { screen: OrderScreen,
     headerMode: 'none',
     navigationOptions: ({ navigate, navigation }) => ({
       title: '',

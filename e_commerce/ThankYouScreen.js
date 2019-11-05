@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet,Image} from 'react-native';
+import {View, Text, StyleSheet,Image, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import { firstLaunchCheck, INC, DEC } from "../actions/index";
@@ -11,12 +11,15 @@ class ThankYouScreen extends Component{
         this.submit = this.submit.bind(this)
     }
     submit(){
-
+        const {navigate} = this.props.navigation;
+        navigate('ReferralProgramScreenStack')
     }
     render(){
         return(
             <View  style={styles.mainContainer}>
-                <Image resizeMode={'contain'} style={styles.immageTag} source={require('../assets/thankyou.png')}/>
+                <TouchableOpacity onPress={this.submit}>
+                    <Image resizeMode={'contain'} style={styles.immageTag} source={require('../assets/thankyou.png')}/>
+                </TouchableOpacity>
             </View>
         );
     }
