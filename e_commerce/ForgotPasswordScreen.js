@@ -11,7 +11,8 @@ class ForgotPasswordScreen extends Component{
         this.submit = this.submit.bind(this)
     }
     submit(){
-
+        const {navigate} = this.props.navigation;
+        navigate('PlazmaScreen2Stack')
     }
     render(){
         return(
@@ -23,7 +24,7 @@ class ForgotPasswordScreen extends Component{
                 </View>
                 
                 <View style={styles.submitButton}>
-                    <TouchableOpacity onPress={this.login}>
+                    <TouchableOpacity onPress={this.submit}>
                         <Text 
                         style={{color: 'white',height: 40, fontWeight: 'bold'}}
                         >

@@ -30,6 +30,7 @@ class LoginScreen2 extends Component {
   constructor(props) {
     super(props);
     this.change = this.change.bind(this);
+    this.login = this.login.bind(this);
     
     this.state = {
       email   : '',
@@ -40,7 +41,8 @@ class LoginScreen2 extends Component {
   }
 
   login(){
-
+    const {navigate} = this.props.navigation
+    navigate('OrderScreenStack')
   }
 
   change(){

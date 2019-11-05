@@ -1,12 +1,9 @@
 import React, {Fragment, Component} from 'react';
 import {StyleSheet, View, Text, TextInput} from 'react-native';
-import { SearchBar } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
 import {connect} from 'react-redux';
 import { firstLaunchCheck, INC, DEC } from "../actions/index";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
-
 
 
 class PhoneAffiliateHomeScreen extends Component{
@@ -40,7 +37,6 @@ const styles = StyleSheet.create({
     },
     SearchBoxcontainer: {
         flexDirection: 'row-reverse',
-        backgroundColor: 'white',
         backgroundColor: '#F7F7F7',
     },
     searchInput: {

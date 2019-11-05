@@ -29,13 +29,17 @@ import { withNavigation } from 'react-navigation';
 class ProductScreen extends Component {
     constructor(props) {
         super(props);
+        this.login = this.login.bind(this)
         this.state = {
             data: [{'id': 1}, {'id': 2},{'id': 3},{'id': 4},
             {'id': 5},{'id': 6},{'id': 7},{'id': 8},{'id': 9},
             {'id': 10},{'id': 11},{'id': 12},{'id': 13},{'id': 14},],
         }
     }
-
+    login(){
+        const {navigate} = this.props.navigation;
+        navigate('ForgotPasswordStack')
+    }
     render()
     {
         return(
@@ -66,7 +70,7 @@ class ProductScreen extends Component {
                         data={this.state.data}
                         horizontal={false}
                         numColumns={2}
-                        renderItem={({item}) => 
+                        renderItem={({item}) =>
                         <View key={item.id} style={{flex: 1/2, }}>
                                 <View style={{height: 150, margin: 3, padding: 3, backgroundColor: '#f6f6ff'}}>
                                     <View style={{margin: 10, alignSelf: 'flex-end', backgroundColor: 'green', height:15, width: 15, borderRadius: 15/2}}>

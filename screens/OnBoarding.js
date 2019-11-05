@@ -42,6 +42,7 @@ class OnBoardingScreen extends Component {
   login(){
     const {navigate} = this.props.navigation
     navigate('LoginStack')
+    // navigate('SettingScreenStack')
 
   }
 

@@ -11,7 +11,8 @@ class PlazmaScreen2 extends Component{
         this.submit = this.submit.bind(this)
     }
     submit(){
-
+        const {navigate} = this.props.navigation;
+        navigate('ThankYouScreenStack')
     }
     render(){
         return(
@@ -24,17 +25,17 @@ class PlazmaScreen2 extends Component{
                     </View>
                 </View>
                 <View style={styles.buttonMainContainer}>
-                    <TouchableOpacity style={styles.tryAgainButton}>
+                    <TouchableOpacity style={styles.tryAgainButton} onPress={this.submit}>
                         <Text style={{color: 'black', fontSize: 16, fontWeight: 'bold'}}>Try Again</Text>
                     </TouchableOpacity>
                 </View>  
                 <View style={styles.bottomContainer}>
                     <Text style={{fontSize: 20, color: 'white'}}>Was this answer correct?</Text>
                     <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10}}>
-                        <TouchableOpacity style={styles.yesNoButton}>
+                        <TouchableOpacity style={styles.yesNoButton} onPress={this.submit}>
                             <Text style={styles.yesNoText}>YES</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.yesNoButton}>
+                        <TouchableOpacity style={styles.yesNoButton} onPress={this.submit}>
                             <Text style={styles.yesNoText}>NO</Text>
                         </TouchableOpacity>
                     </View>
